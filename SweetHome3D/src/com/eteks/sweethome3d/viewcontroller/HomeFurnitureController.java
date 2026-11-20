@@ -596,6 +596,7 @@ public class HomeFurnitureController implements Controller {
   public boolean isPropertyEditable(Property property) {
     switch (property) {
       case DESCRIPTION :
+        return true;
       case PRICE :
         return false;
       case LIGHT_POWER :
@@ -1141,7 +1142,6 @@ public class HomeFurnitureController implements Controller {
   public boolean isTexturable() {
     return this.texturable;
   }
-  
   /**
    * Controls the modification of selected furniture in the edited home.
    */
@@ -1210,7 +1210,7 @@ public class HomeFurnitureController implements Controller {
         List<Selectable> newSelection = this.home.getSelectedItems(); 
         UndoableEdit undoableEdit = new FurnitureModificationUndoableEdit(
             this.home, this.preferences, oldSelection, newSelection, modifiedFurniture, 
-            name, nameVisible, description, price, x, y, elevation, angle, basePlanItem, width, depth, height, 
+            name, nameVisible, description, price, x, y, elevation, angle, basePlanItem, width, depth, height,
             paint, color, texture, modelMaterials, defaultShininess, shininess, visible, modelMirrored, lightPower);
         this.undoSupport.postEdit(undoableEdit);
       }
@@ -1256,12 +1256,12 @@ public class HomeFurnitureController implements Controller {
     private final Float                       lightPower;
 
     private FurnitureModificationUndoableEdit(Home home,
-                                              UserPreferences preferences, 
+                                              UserPreferences preferences,
                                               List<Selectable> oldSelection,
                                               List<Selectable> newSelection,
                                               ModifiedPieceOfFurniture [] modifiedFurniture,
-                                              String name, Boolean nameVisible, String description, BigDecimal price, 
-                                              Float x, Float y, Float elevation, Float angle, Boolean basePlanItem, 
+                                              String name, Boolean nameVisible, String description, BigDecimal price,
+                                              Float x, Float y, Float elevation, Float angle, Boolean basePlanItem,
                                               Float width, Float depth, Float height,
                                               FurniturePaint paint, Integer color, HomeTexture texture,
                                               HomeMaterial [] modelMaterials,

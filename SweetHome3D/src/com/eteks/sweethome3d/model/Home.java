@@ -488,6 +488,7 @@ public class Home implements Serializable, Cloneable {
       case WIDTH : 
       case DEPTH :
       case HEIGHT :
+      //case VOLUME :
       case MOVABLE :
       case DOOR_OR_WINDOW :
       case COLOR :

@@ -914,7 +914,7 @@ public class HomeFurniturePanel extends JPanel implements DialogView {
           2, 0, 2, 1, 0, 0, GridBagConstraints.LINE_START,
           GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
     }
-    if (this.descriptionLabel != null) {
+    if (this.descriptionLabel != null ) {
       namePanel.add(this.descriptionLabel, new GridBagConstraints(
           0, 1, 1, 1, 0, 0, labelAlignment, GridBagConstraints.NONE,
           new Insets(5, 0, 0, 5), 0, 0));
