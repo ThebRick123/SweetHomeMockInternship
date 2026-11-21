@@ -109,6 +109,11 @@ public class HomePieceOfFurniture extends HomeObject implements PieceOfFurniture
           return HomePieceOfFurniture.compare(piece1.depth, piece2.depth);
         }
       });
+    SORTABLE_PROPERTY_COMPARATORS.put(SortableProperty.VOLUME, new Comparator<HomePieceOfFurniture>() {
+      public int compare(HomePieceOfFurniture piece1, HomePieceOfFurniture piece2) {
+        return HomePieceOfFurniture.compare(piece1.getVolume(), piece2.getVolume());
+      }
+    });
     SORTABLE_PROPERTY_COMPARATORS.put(SortableProperty.MOVABLE, new Comparator<HomePieceOfFurniture>() {
         public int compare(HomePieceOfFurniture piece1, HomePieceOfFurniture piece2) {
           return HomePieceOfFurniture.compare(piece1.movable, piece2.movable);
@@ -1241,6 +1246,9 @@ public class HomePieceOfFurniture extends HomeObject implements PieceOfFurniture
    * Returns a comparator that compares furniture on a given <code>property</code> in ascending order.
    */
   public static Comparator<HomePieceOfFurniture> getFurnitureComparator(SortableProperty property) {
-    return SORTABLE_PROPERTY_COMPARATORS.get(property);    
+    if (property.name().equals("DEPTH")){
+      System.out.println(55);
+    }
+    return SORTABLE_PROPERTY_COMPARATORS.get(property);
   }
 }

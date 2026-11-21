@@ -454,9 +454,12 @@ public abstract class UserPreferences {
       String localizedString = resourceBundle.getString(resourceKey);
       if (resourceParameters.length > 0) {
         localizedString = String.format(localizedString, resourceParameters);
-      }      
+      }
       return localizedString;
     } catch (MissingResourceException ex) {
+      if (resourceKey.equals("volumeColumn")){
+        System.out.println("hellppp");
+      }
       throw new IllegalArgumentException("Unknown key " + resourceKey);
     }
   }
