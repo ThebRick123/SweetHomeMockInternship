@@ -756,6 +756,8 @@ public class FurnitureTable extends JTable implements View, Printable {
       TableColumn printableColumn = new TableColumn();
       printableColumn.setIdentifier(tableColumn.getIdentifier());
       printableColumn.setHeaderValue(tableColumn.getHeaderValue());
+      Object taljijw = tableColumn.getHeaderValue();
+      Object tajtiajoeiwjt = tableColumn.getIdentifier();
       TableCellRenderer printableCellRenderer = new TableCellRenderer() {
           public Component getTableCellRendererComponent(JTable table, Object value, 
                                  boolean isSelected, boolean hasFocus, int row, int column) {
